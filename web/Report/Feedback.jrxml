@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Feedback" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0ec6c13b-8029-433b-b3e2-d3a054079a7c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     Feedback."F_id" AS Feedback_F_id,
+     Feedback."Name" AS Feedback_Name,
+     Feedback."Issues" AS Feedback_Issues,
+     Feedback."date" AS Feedback_date
+FROM
+     "dbo"."Feedback" Feedback]]>
+	</queryString>
+	<field name="Feedback_F_id" class="java.lang.Integer"/>
+	<field name="Feedback_Name" class="java.lang.String"/>
+	<field name="Feedback_Issues" class="java.lang.String"/>
+	<field name="Feedback_date" class="java.lang.String"/>
+	<group name="Feedback_F_id">
+		<groupExpression><![CDATA[$F{Feedback_F_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="690" y="0" width="112" height="20" uuid="3ef826f6-515c-4713-8aab-4849f9d3d3f6"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="774" y="59" width="28" height="20" uuid="c79014bb-7f4f-4059-a0c4-07a03bb7bff2"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="239" y="20" width="327" height="39" uuid="eb154024-17ab-43b9-87a6-3cd48d4ea188"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Feedback Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="179" height="20" uuid="b3d71ee8-a2c9-4238-ba8f-3d300974cf3e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Online Career Guidance Test]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="15" width="802" height="1" uuid="99bb2ec8-b225-4fc6-82f4-94862e5c6e90"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="0" width="158" height="20" uuid="9467ff1b-aff9-44bf-b61c-1ba6d71451f1"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="0" width="221" height="20" uuid="0abacb87-3dc3-49e7-b03d-192784feff2e"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student Issues]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="603" y="0" width="195" height="20" uuid="e79f915b-f5f1-49f9-a5b8-e255ec1fdd19"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="24" width="802" height="1" uuid="6fbdb356-51eb-4193-aa0c-827775ec05f1"/>
+			</line>
+			<staticText>
+				<reportElement x="25" y="0" width="112" height="20" uuid="f09739d2-e492-465f-846d-86ba947cb1e9"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Feedback ID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="29" y="0" width="85" height="20" uuid="3e67719d-6fc5-4dd6-b663-bb07d21f70b7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Feedback_F_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="0" width="158" height="20" uuid="570c6bd5-ae3b-4776-98e7-ec2b2518b5c6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Feedback_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="348" y="0" width="221" height="20" uuid="d9f89724-9ad1-418d-b81a-6b51c039ad9a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Feedback_Issues}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="603" y="0" width="195" height="20" uuid="f6a3816e-3151-462f-9493-0ece760735f8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Feedback_date}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="30" width="802" height="1" uuid="08f795de-bb22-4b63-adc1-f7e3f166e9cb"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

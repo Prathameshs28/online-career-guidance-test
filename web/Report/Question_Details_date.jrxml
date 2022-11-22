@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Question_Details_date" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d03f731b-98b4-490a-bd64-9a85b0b39e76">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="date1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     Add_Question."AQ_id" AS Add_Question_AQ_id,
+     Add_Question."Q_Number" AS Add_Question_Q_Number,
+     Add_Question."Question" AS Add_Question_Question,
+     Add_Question."O_A" AS Add_Question_O_A,
+     Add_Question."O_B" AS Add_Question_O_B,
+     Add_Question."O_C" AS Add_Question_O_C,
+     Add_Question."O_D" AS Add_Question_O_D,
+     Add_Question."C_O" AS Add_Question_C_O,
+     Add_Question."E_type" AS Add_Question_E_type,
+     Add_Question."date" AS Add_Question_date
+FROM
+     "dbo"."Add_Question" Add_Question
+where date between $P{date1} and $P{date2};]]>
+	</queryString>
+	<field name="Add_Question_AQ_id" class="java.lang.Integer"/>
+	<field name="Add_Question_Q_Number" class="java.math.BigDecimal"/>
+	<field name="Add_Question_Question" class="java.lang.String"/>
+	<field name="Add_Question_O_A" class="java.lang.String"/>
+	<field name="Add_Question_O_B" class="java.lang.String"/>
+	<field name="Add_Question_O_C" class="java.lang.String"/>
+	<field name="Add_Question_O_D" class="java.lang.String"/>
+	<field name="Add_Question_C_O" class="java.lang.String"/>
+	<field name="Add_Question_E_type" class="java.lang.String"/>
+	<field name="Add_Question_date" class="java.lang.String"/>
+	<group name="Add_Question_AQ_id">
+		<groupExpression><![CDATA[$F{Add_Question_AQ_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="401" y="0" width="154" height="20" uuid="4c86bb7c-8372-4036-9959-e347e048469e"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="534" y="65" width="21" height="20" uuid="43d26bcb-6832-44d5-b0aa-e7e828cbd816"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="142" y="31" width="286" height="34" uuid="dae1e15f-e5b5-4441-ada1-c4fb540ec5bc"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Question Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="172" height="20" uuid="2f08ad50-1985-4232-a2aa-ef2ee7abb1d1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Online Career Guidance Test]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="12" width="555" height="1" uuid="a42b863d-ee3f-4194-9fcf-12106f02e6c4"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="0" width="29" height="20" uuid="8a8a6b40-9789-4d6d-9281-cb2580c2f719"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Q_NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="0" width="110" height="20" uuid="7c8f9763-85e7-41d4-b063-fb1a3f72abc2"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Question]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="32" height="20" uuid="a3cc8888-c3d7-4ad2-831a-3b6e5a8051ce"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[O_A	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="262" y="0" width="35" height="20" uuid="df524bad-da81-40a3-9373-36f6909f55ed"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[O_B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="0" width="32" height="20" uuid="ffd0b799-934e-4173-82da-8995fd416ac1"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[O_C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="0" width="31" height="20" uuid="49742715-f558-464a-a14c-1b4e7b3d38c6"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[O_D]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="0" width="43" height="20" uuid="6f63f7e1-2f65-4fa1-ab8e-bd1d5e887892"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C_O]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="0" width="55" height="20" uuid="7cc1d4b6-abc2-4e4d-9174-733f2f9809e7"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Exam Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="495" y="0" width="55" height="20" uuid="a2db1ea2-c715-4751-a677-8ff9d5774509"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="92139550-674f-45e8-b57d-d923e66273b3"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="5" y="0" width="29" height="20" uuid="dbf459de-a314-43ac-b9bc-a0c10edb508a"/>
+				<textFieldExpression><![CDATA[$F{Add_Question_Q_Number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="0" width="165" height="49" uuid="5b98ac33-77cf-4357-91c5-5915f248fedc"/>
+				<textFieldExpression><![CDATA[$F{Add_Question_Question}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="205" y="0" width="47" height="20" uuid="ca9eadcb-cdf8-4211-903a-638f96c6d26a"/>
+				<textFieldExpression><![CDATA[$F{Add_Question_O_A}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="252" y="0" width="45" height="20" uuid="72061833-5634-4fe3-915d-5e6b977046da"/>
+				<textFieldExpression><![CDATA[$F{Add_Question_O_B}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="0" width="47" height="20" uuid="e7a91d0d-0f8d-4ff6-9b64-ac55e9255c2e"/>
+				<textFieldExpression><![CDATA[$F{Add_Question_O_C}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="344" y="0" width="41" height="20" uuid="3de9c0c0-9da1-45c0-845f-0cac9dc4cd68"/>
+				<textFieldExpression><![CDATA[$F{Add_Question_O_D}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="385" y="0" width="55" height="20" uuid="fb533780-788a-4723-a55e-d2719a2adad2"/>
+				<textFieldExpression><![CDATA[$F{Add_Question_C_O}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="55" height="20" uuid="50665255-0713-4106-b5d2-426ee8265f02"/>
+				<textFieldExpression><![CDATA[$F{Add_Question_E_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="498" y="0" width="55" height="20" uuid="05173303-52ae-4f3a-bafa-93ae80286132"/>
+				<textFieldExpression><![CDATA[$F{Add_Question_date}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="49" width="555" height="1" uuid="7a6e2ad7-1a5e-4efd-872e-a4c3740210b4"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

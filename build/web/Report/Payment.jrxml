@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Payment" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="384c77d2-e3c1-4290-b076-9b592072acd3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     Pay_ment."P_id" AS Pay_ment_P_id,
+     Pay_ment."P_Type" AS Pay_ment_P_Type,
+     Pay_ment."Bank_Name" AS Pay_ment_Bank_Name,
+     Pay_ment."SixteenDNumber" AS Pay_ment_SixteenDNumber,
+     Pay_ment."ThreeDNumber" AS Pay_ment_ThreeDNumber,
+     Pay_ment."User_Name" AS Pay_ment_User_Name,
+     Pay_ment."date" AS Pay_ment_date
+FROM
+     "dbo"."Pay_ment" Pay_ment]]>
+	</queryString>
+	<field name="Pay_ment_P_id" class="java.lang.Integer"/>
+	<field name="Pay_ment_P_Type" class="java.lang.String"/>
+	<field name="Pay_ment_Bank_Name" class="java.lang.String"/>
+	<field name="Pay_ment_SixteenDNumber" class="java.math.BigDecimal"/>
+	<field name="Pay_ment_ThreeDNumber" class="java.math.BigDecimal"/>
+	<field name="Pay_ment_User_Name" class="java.lang.String"/>
+	<field name="Pay_ment_date" class="java.lang.String"/>
+	<group name="Pay_ment_P_id">
+		<groupExpression><![CDATA[$F{Pay_ment_P_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="299" y="17" width="200" height="40" uuid="357cf685-4222-4026-82a8-4a676015f5e7"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="178" height="20" uuid="263b6dd0-07d0-4bbb-be3a-922f81ff045c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Online Career Guidance Test]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="783" y="57" width="19" height="20" uuid="33d9c1b7-1b79-444f-8d0a-3b0c23d980e9"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="666" y="0" width="136" height="20" uuid="72063493-fd8f-41b7-a0e5-19629b51b10b"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="19" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="16" width="798" height="1" uuid="06a3eb48-d153-451f-ad02-f25b98ac495b"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="35" height="20" uuid="5a7e2f38-a21f-4c79-a3c9-d5770179e95e"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[P id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="0" width="114" height="20" uuid="98913971-7db8-4b4c-9ff9-2d94763f4794"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="0" width="137" height="20" uuid="128fb6e0-8144-4e0a-857c-b35d715cbb63"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bank Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="114" height="20" uuid="71d0bb02-3298-44d6-b646-56581ebc9292"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SixteenDNumber]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="114" height="20" uuid="9419c3a7-4e36-4af8-91ce-6d7e1dbbc78e"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ThreeDNumber]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="570" y="0" width="114" height="20" uuid="efb2b70b-f52c-47da-8d17-cff2e5ad418e"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="684" y="0" width="114" height="20" uuid="93207db2-e115-4c90-9881-3ef1a753ee62"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<line>
+				<reportElement x="4" y="20" width="798" height="1" uuid="c2cecd3e-0c98-49f1-9429-bb4c18b4489b"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="35" height="20" uuid="68a27455-b0a3-4651-8c74-0c721ac06d9b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Pay_ment_P_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="0" width="114" height="20" uuid="704255be-6cc4-4565-b58a-30f037375667"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Pay_ment_P_Type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="0" width="137" height="20" uuid="6a88e5d8-1e0e-455e-b8be-079df2e7deca"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Pay_ment_Bank_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="0" width="114" height="20" uuid="c94ea820-1cfc-4a48-a873-e52bd9074af3"/>
+				<textFieldExpression><![CDATA[$F{Pay_ment_SixteenDNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="114" height="20" uuid="c35e30db-41ec-472c-9c13-ef56f200c462"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Pay_ment_ThreeDNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="0" width="114" height="20" uuid="92e10539-7711-44b5-ac19-d7bb484c322c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Pay_ment_User_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="684" y="0" width="114" height="20" uuid="68ebdcec-cd04-4958-a61b-60fddc93df51"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Pay_ment_date}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="20" width="798" height="1" uuid="1e82b8c3-fc23-4959-a12d-7f30e88bdcb7"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

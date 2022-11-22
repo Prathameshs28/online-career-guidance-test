@@ -1,0 +1,37 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ *
+ * @author admin
+ */
+public class stream extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session=req.getSession();
+        String stream=req.getParameter("Stream");
+        String event=req.getParameter("btn_submit");
+            
+        if(event.equals("Continue")) {
+               session.setAttribute("Stream", stream);
+               resp.sendRedirect("Decription_12th.jsp"); 
+              
+        }
+        if(event.equals("Back"))
+        {
+            resp.sendRedirect("User_Examination.jsp");
+        }       
+     
+        }    
+}
